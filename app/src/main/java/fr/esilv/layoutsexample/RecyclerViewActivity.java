@@ -1,12 +1,13 @@
 package fr.esilv.layoutsexample;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 	
@@ -16,7 +17,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_recycler_view);
 		
 		RecyclerView recyclerView = findViewById(R.id.recyclerView);
-		recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+		recyclerView.setLayoutManager(new LinearLayoutManager(this));
 		
 		recyclerView.setAdapter(new StudentsRecyclerAdapter(createStudentList(50)));
 	}

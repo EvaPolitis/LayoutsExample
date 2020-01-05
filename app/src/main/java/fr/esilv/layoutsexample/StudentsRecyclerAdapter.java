@@ -1,13 +1,61 @@
 package fr.esilv.layoutsexample;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
+
 class StudentsRecyclerAdapter extends RecyclerView.Adapter<StudentViewHolder> {
+	
+	private final List<Student> studentList;
+	
+	StudentsRecyclerAdapter(@Nullable List<Student> studentList) {
+		this.studentList = studentList;
+	}
+	
+	@NonNull
+	@Override
+	public StudentViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
+		View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_student, viewGroup, false);
+		return new StudentViewHolder(view);
+	}
+	
+	@Override
+	public void onBindViewHolder(@NonNull StudentViewHolder studentViewHolder, int position) {
+		if (studentList != null) {
+			studentViewHolder.bind(studentList.get(position));
+		}
+	}
+	
+	@Override
+	public int getItemCount() {
+		return studentList != null ? studentList.size() : 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*extends RecyclerView.Adapter<StudentViewHolder> {
 	
 	private final List<Student> studentList;
 	
@@ -31,4 +79,4 @@ class StudentsRecyclerAdapter extends RecyclerView.Adapter<StudentViewHolder> {
 	public int getItemCount() {
 		return studentList == null ? 0 : studentList.size();
 	}
-}
+}*/

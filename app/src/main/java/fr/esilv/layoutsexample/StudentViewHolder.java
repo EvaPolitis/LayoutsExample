@@ -1,10 +1,52 @@
 package fr.esilv.layoutsexample;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 class StudentViewHolder extends RecyclerView.ViewHolder {
+	
+	private TextView lastname;
+	private TextView firstname;
+	
+	public StudentViewHolder(@NonNull View itemView) {
+		super(itemView);
+		lastname = itemView.findViewById(R.id.lastName);
+		firstname = itemView.findViewById(R.id.firstName);
+	}
+	
+	public void bind(Student student) {
+		lastname.setText(student.getLastName());
+		firstname.setText(student.getFirstName());
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*extends RecyclerView.ViewHolder {
 	
 	private TextView firstName;
 	private TextView lastName;
@@ -19,4 +61,4 @@ class StudentViewHolder extends RecyclerView.ViewHolder {
 		firstName.setText(student.getFirstName());
 		lastName.setText(student.getLastName());
 	}
-}
+}*/
