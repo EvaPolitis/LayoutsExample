@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerViewActivity extends AppCompatActivity {
@@ -17,8 +16,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_recycler_view);
 		
 		RecyclerView recyclerView = findViewById(R.id.recyclerView);
-		recyclerView.setLayoutManager(new LinearLayoutManager(this));
-		
 		recyclerView.setAdapter(new StudentsRecyclerAdapter(createStudentList(50)));
 	}
 	

@@ -12,6 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+            <!--UNCOMMENT THESE LINES AND COMMENT LINES IN MainActivityKt DEFINITION TO SWITCH FROM KOTLIN IMPLEMENTATION TO JAVA IMPLEMENTATION-->
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity android:name=".MainActivityKt">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,12 +27,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".ConstraintLayoutRelativeActivity" />
+        <activity android:name=".ConstraintLayoutRelativeActivityKt" />
+        <activity android:name=".ConstraintLayoutLinearActivityKt" />
         <activity android:name=".ConstraintLayoutLinearActivity" />
         <activity android:name=".LinearLayoutActivity" />
+        <activity android:name=".LinearLayoutActivityKt" />
         <activity android:name=".RelativeLayoutActivity" />
+        <activity android:name=".RelativeLayoutActivityKt" />
         <activity android:name=".WebViewActivity" />
+        <activity android:name=".WebViewActivityKt" />
         <activity android:name=".ListViewActivity" />
+        <activity android:name=".ListViewActivityKt" />
         <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".RecyclerViewActivityKt" />
     </application>
 
 </manifest>

@@ -7,14 +7,13 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 class StudentsRecyclerAdapter extends RecyclerView.Adapter<StudentViewHolder> {
 	
 	private final List<Student> studentList;
 	
-	StudentsRecyclerAdapter(@Nullable List<Student> studentList) {
+	StudentsRecyclerAdapter(@NonNull List<Student> studentList) {
 		this.studentList = studentList;
 	}
 	
@@ -27,14 +26,12 @@ class StudentsRecyclerAdapter extends RecyclerView.Adapter<StudentViewHolder> {
 	
 	@Override
 	public void onBindViewHolder(@NonNull StudentViewHolder studentViewHolder, int position) {
-		if (studentList != null) {
-			studentViewHolder.bind(studentList.get(position));
-		}
+		studentViewHolder.bind(studentList.get(position));
 	}
 	
 	@Override
 	public int getItemCount() {
-		return studentList != null ? studentList.size() : 0;
+		return studentList.size();
 	}
 }
 
